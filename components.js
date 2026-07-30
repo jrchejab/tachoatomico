@@ -38,7 +38,7 @@ function renderInnerHeader(containerId) {
   if (!el) return;
   el.innerHTML =
     '<div class="top-bar">' +
-      '<a href="tachoatomico.html" class="inicio-link">INICIO</a>' +
+      '<a href="index.html" class="inicio-link">INICIO</a>' +
       '<div class="logo-group">' +
         '<img src="imagenes/logo_sign.png" alt="TACHOATOMICO">' +
         '<h1>@TACHOATOMICO</h1>' +

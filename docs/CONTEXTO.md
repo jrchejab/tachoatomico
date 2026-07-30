@@ -4,8 +4,8 @@
 
 ```
 /
-├── index.html              # CV / Hoja de vida (modo currículum)
-├── tachoatomico.html       # Página principal web (menú: bio, arte, expo)
+├── index.html              # Página principal web (menú: bio, arte, expo)
+├── cv.html                 # CV / Hoja de vida
 ├── bio.html                # Página interior — biografía
 ├── arte.html               # Página interior — obras de arte
 ├── expo.html               # Página interior — exposiciones
