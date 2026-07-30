@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TACHOATOMICO</title>
+<style>
+@font-face {
+  font-family: 'Moonline Solid';
+  src: url('fonts/Moonlite Solid.otf') format('opentype');
+}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+.container { width: 80%; max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* header main */
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+header img { height: 140px; }
+header h1 {
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #111;
+  margin: 0.5rem 0 0.25rem;
+}
+header .tagline, header .meta-tags {
+  color: #ff0066;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+}
+header .tagline {
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+header .meta-tags {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+/* nav principal */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+nav a {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+nav a .dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: url('imagenes/atom.png') no-repeat center/contain;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="main-header"></div>
+
+  <nav id="nav-menu">
+    <a href="bio.html">bio</a>
+    <a href="arte.html">arte</a>
+    <a href="expo.html">expo</a>
+  </nav>
+
+  <footer>
+    @tachoatomico · 2025
+  </footer>
+
+</div>
+
+<script src="content.js"></script>
+<script src="components.js"></script>
+<script>
+renderMainHeader('main-header');
+agregarPuntos('#nav-menu a');
+</script>
+</body>
+</html>
