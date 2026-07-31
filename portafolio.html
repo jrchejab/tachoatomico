@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TACHOATOMICO — Portafolio</title>
+<style>
+@font-face {
+  font-family: 'Moonline Solid';
+  src: url('fonts/Moonlite Solid.otf') format('opentype');
+}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #1c1c1c;
+  line-height: 1.6;
+}
+.container { width: 95%; max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem; overflow: hidden; }
+
+/* header */
+header {
+  text-align: center;
+  padding: 3rem 0 1.5rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+header img { height: 200px; margin-bottom: 0.75rem; }
+header h1 {
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 0;
+}
+header .tagline, header .meta-tags {
+  color: #ff0066;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+}
+header .tagline { font-size: 1.7rem; margin-top: 0; margin-bottom: 2px; line-height: 1.2; }
+header .meta-tags { font-size: 1.7rem; line-height: 1.2; }
+#header-wrap header { border-bottom: none !important; padding-bottom: 0.5rem !important; }
+header .contacto-sutil {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+header .contacto-sutil a {
+  color: #aaa;
+  text-decoration: none;
+}
+header .contacto-sutil a:hover { color: #666; }
+
+/* secciones en filas */
+.seccion-bloque {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.seccion-bloque:last-of-type { border-bottom: none; }
+
+.seccion-titulo {
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+/* declaración */
+.declaracion {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+/* contenido en filas: cada item = fila con 2 columnas */
+.fila-item {
+  display: grid;
+  grid-template-columns: minmax(0, 3.5fr) minmax(0, 6.5fr);
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+  max-width: 100%;
+}
+.fila-item > * { min-width: 0; }
+.fila-media { min-width: 0; overflow: hidden; }
+.fila-media img { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 4px; }
+.fila-texto-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.fila-texto {
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  flex: 0 0 50%;
+}
+.fila-texto * { min-width: 0; max-width: 100%; }
+
+.fila-extras {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  min-width: 0;
+  flex: 0 0 calc(50% - 0.5rem);
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.fila-extras img {
+  flex: 0 0 auto;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+/* arte y expo */
+.obra, .expo-blk { margin-bottom: 2rem; }
+.obra:last-child, .expo-blk:last-child { margin-bottom: 0; }
+
+.obra-encabezado, .expo-encabezado { margin-bottom: 0.75rem; }
+.obra-titulo, .expo-titulo { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 400; color: #111; }
+.obra-complemento, .expo-complemento { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #c00080; font-weight: 400; margin-top: 0.1rem; }
+.obra-exposicion, .expo-lugar { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #111; font-weight: 400; margin-top: 0.1rem; }
+.obra-año, .expo-año { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #111; font-weight: 400; margin-top: 0.1rem; }
+
+.obra-descripcion, .expo-descripcion {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+}
+.obra-extra { font-family: 'Roboto', sans-serif; font-size: 0.85rem; font-weight: 300; color: #555; text-align: justify; margin-top: 0.4rem; }
+
+.obra-multimedia, .expo-multimedia { margin-top: 0.75rem; max-width: 100%; overflow: hidden; }
+.obra-multimedia img, .expo-multimedia img { width: 100%; max-width: 100%; height: auto; border-radius: 4px; display: block; }
+.obra-grid, .expo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.obra-grid img, .expo-grid img { width: 100%; max-width: 100%; height: auto; border-radius: 4px; display: block; }
+
+.obra-links, .expo-links { margin-top: 0.5rem; }
+.obra-links a, .expo-links a { color: #c00080; text-decoration: underline; font-size: 0.8rem; display: inline-block; margin-right: 0.75rem; }
+
+footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; margin-top: 2rem; }
+
+@media print {
+  @page { size: A4; margin: 1.5cm; }
+
+  /* Página 1: encabezado + declaración */
+  .inicio-pagina {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Páginas dinámicas: los items fluyen */
+  .fila-item {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .fila-media img {
+    width: 100%;
+    height: auto;
+  }
+  .fila-texto-col {
+    display: block;
+    height: auto !important;
+  }
+  .fila-texto {
+    overflow: visible;
+    max-height: none;
+  }
+  .fila-extras {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    height: auto !important;
+  }
+  .fila-extras img {
+    flex: 1 1 auto;
+    width: auto;
+    max-height: 180px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="header-wrap" style="border-bottom:1px solid #d4d4d4;padding-bottom:0.5rem;margin-bottom:0;">
+    <div id="main-header" style="border:none;padding-bottom:0.5rem;"></div>
+    <div style="display:flex;justify-content:flex-end;gap:2rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#aaa;letter-spacing:0.5px;padding-top:0.25rem;">
+      <span><svg width="10" height="10" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01z"/></svg>320 836 6443</span>
+      <span><svg width="10" height="10" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:jrchejab@gmail.com" style="color:#aaa;text-decoration:none;">jrchejab@gmail.com</a></span>
+    </div>
+  </div>
+
+  <div class="seccion-bloque">
+    <div class="seccion-titulo">DECLARACIÓN DEL ARTISTA</div>
+    <p class="declaracion">
+      tachoatomico es mi enganche cuántico con el arte. Mi trabajo surge en la intersección de lo cotidiano con los misterios cuánticos, la ciencia, la tecnología y la filosofía moderna y ancestral; campos que resuenan con la forma en que entiendo y experimento la vida. A partir de esta convergencia, creo objetos que buscan materializar y comunicar estas ideas, utilizando procesos artísticos simples que combinan bits, códigos, componentes electrónicos y artes visuales. Busco que estos objetos se entrelacen con otros seres, permitiendo que sus significados y mensajes se propaguen a través de nuevas conexiones.
+    </p>
+  </div>
+
+  <div class="seccion-bloque inicio-pagina">
+    <div class="seccion-titulo">ARTE</div>
+    <div class="col2" id="arte-content"></div>
+  </div>
+
+  <div class="seccion-bloque">
+    <div class="seccion-titulo">EXPOSICIONES</div>
+    <div class="col2" id="expo-content"></div>
+  </div>
+
+  <footer>
+    <a href="https://instagram.com/tachoatomico" target="_blank" style="color:#bbb;text-decoration:none;">@TACHOATOMICO</a> — 2025
+  </footer>
+
+</div>
+
+<script src="content.js"></script>
+<script src="components.js"></script>
+<script>
+renderMainHeader('main-header');
+
+// Arte
+var arteEl = document.getElementById('arte-content');
+CONTENIDO.obras.forEach(function(o) {
+  arteEl.innerHTML += obraFilaHTML(o);
+});
+
+// Expo
+var expoEl = document.getElementById('expo-content');
+CONTENIDO.expo_list.forEach(function(e) {
+  expoEl.innerHTML += expoFilaHTML(e);
+});
+
+// Ajustar alto: la segunda columna no supera el alto de la imagen principal
+function ajustarAltos() {
+  document.querySelectorAll('.fila-item').forEach(function(item) {
+    var media = item.querySelector('.fila-media');
+    var textoCol = item.querySelector('.fila-texto-col');
+    if (!media || !textoCol) return;
+    var img = media.querySelector('img');
+    if (!img) return;
+    var alto = img.getBoundingClientRect().height;
+    textoCol.style.height = alto + 'px';
+    var extras = textoCol.querySelector('.fila-extras');
+    if (extras) {
+      extras.style.height = Math.floor(alto / 2) + 'px';
+    }
+  });
+}
+ajustarAltos();
+window.addEventListener('load', ajustarAltos);
+</script>
+</body>
+</html>

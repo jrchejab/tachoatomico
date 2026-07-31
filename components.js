@@ -2,12 +2,13 @@
 // Funciones para renderizar headers, navs y contenido
 
 // ---- Puntos aleatorios alrededor de menús ----
-function agregarPuntos(selector) {
+function agregarPuntos(selector, distMax) {
+  distMax = distMax || 28;
   document.querySelectorAll(selector).forEach(function(link) {
     var dot = document.createElement('span');
     dot.className = 'dot';
     var angle = Math.random() * 360;
-    var dist = 14 + Math.random() * 14;
+    var dist = distMax/2 + Math.random() * distMax/2;
     var x = Math.cos(angle * Math.PI / 180) * dist;
     var y = Math.sin(angle * Math.PI / 180) * dist;
     dot.style.left = '50%';
@@ -86,11 +87,21 @@ function expoCardHTML(e) {
   '</div>';
 }
 
-// ---- Obra de arte (página arte) ----
-function obraHTML(o) {
-  var html = '<div class="obra">';
+// ---- Obra de arte en fila (portafolio) ----
+function obraFilaHTML(o) {
+  var html = '<div class="fila-item">';
 
-  // Bloque 1 — Encabezado
+  // Col 1 — Imagen principal
+  html += '<div class="fila-media">';
+  if (o.imgs && o.imgs.length) {
+    html += '<img src="imagenes/' + o.imgs[0] + '" alt="' + o.titulo + '">';
+  }
+  html += '</div>';
+
+  // Col 2 — Textos + imágenes extras
+  html += '<div class="fila-texto-col">';
+
+  html += '<div class="fila-texto">';
   html += '<div class="obra-encabezado">';
   html += '<div class="obra-titulo">' + o.titulo + '</div>';
   html += '<div class="obra-complemento">' + o.complemento_titulo + '</div>';
@@ -100,7 +111,6 @@ function obraHTML(o) {
   html += '<div class="obra-año">' + o.año + '</div>';
   html += '</div>';
 
-  // Bloque 2 — Descripción
   html += '<div class="obra-descripcion">' + o.descripcion + '</div>';
   if (o.descripcion_extras) {
     o.descripcion_extras.forEach(function(ex) {
@@ -108,7 +118,93 @@ function obraHTML(o) {
     });
   }
 
-  // Bloque 3 — Multimedia
+  if (o.links && o.links.length) {
+    html += '<div class="obra-links">';
+    o.links.forEach(function(l) {
+      html += '<a href="' + l.url + '" target="_blank">' + l.label + '</a>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Imágenes extras (a 40% del tamaño principal) si hay más de 2
+  if (o.imgs && o.imgs.length > 1) {
+    html += '<div class="fila-extras">';
+    for (var i = 1; i < o.imgs.length; i++) {
+      html += '<img src="imagenes/' + o.imgs[i] + '" alt="' + o.titulo + '">';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>'; // cierre fila-texto-col
+
+  html += '</div>';
+  return html;
+}
+
+// ---- Expo item en fila (portafolio) ----
+function expoFilaHTML(e) {
+  var html = '<div class="fila-item">';
+
+  // Col 1 — Imagen principal
+  html += '<div class="fila-media">';
+  if (e.imgs && e.imgs.length) {
+    html += '<img src="imagenes/' + e.imgs[0] + '" alt="' + e.titulo + '">';
+  }
+  html += '</div>';
+
+  // Col 2 — Textos + imágenes extras
+  html += '<div class="fila-texto-col">';
+
+  html += '<div class="fila-texto">';
+  html += '<div class="expo-encabezado">';
+  html += '<div class="expo-titulo">' + e.titulo + '</div>';
+  html += '<div class="expo-complemento">' + e.complemento_titulo + '</div>';
+  if (e.lugar) {
+    html += '<div class="expo-lugar">' + e.lugar + '</div>';
+  }
+  html += '<div class="expo-año">' + e.año + '</div>';
+  html += '</div>';
+
+  var desc = e.descripcion;
+  if (desc.indexOf('\n\n') > -1) {
+    var parrafos = desc.split('\n\n');
+    parrafos.forEach(function(p) {
+      html += '<div class="expo-descripcion">' + p + '</div>';
+    });
+  } else {
+    html += '<div class="expo-descripcion">' + desc + '</div>';
+  }
+
+  if (e.links && e.links.length) {
+    html += '<div class="expo-links">';
+    e.links.forEach(function(l) {
+      html += '<a href="' + l.url + '" target="_blank">' + l.label + '</a>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // Imágenes extras (a 40% del tamaño principal) si hay más de 2
+  if (e.imgs && e.imgs.length > 1) {
+    html += '<div class="fila-extras">';
+    for (var i = 1; i < e.imgs.length; i++) {
+      html += '<img src="imagenes/' + e.imgs[i] + '" alt="' + e.titulo + '">';
+    }
+    html += '</div>';
+  }
+
+  html += '</div>'; // cierre fila-texto-col
+
+  html += '</div>';
+  return html;
+}
+
+// ---- Obra de arte (página arte) ----
+function obraHTML(o) {
+  var html = '<div class="obra">';
+
+  // Bloque 1 — Multimedia
   if (o.imgs && o.imgs.length) {
     html += '<div class="obra-multimedia">';
     if (o.imgs.length === 1) {
@@ -121,6 +217,24 @@ function obraHTML(o) {
       html += '</div>';
     }
     html += '</div>';
+  }
+
+  // Bloque 2 — Encabezado
+  html += '<div class="obra-encabezado">';
+  html += '<div class="obra-titulo">' + o.titulo + '</div>';
+  html += '<div class="obra-complemento">' + o.complemento_titulo + '</div>';
+  if (o.exposicion) {
+    html += '<div class="obra-exposicion">Exposición: ' + o.exposicion + '</div>';
+  }
+  html += '<div class="obra-año">' + o.año + '</div>';
+  html += '</div>';
+
+  // Bloque 3 — Descripción
+  html += '<div class="obra-descripcion">' + o.descripcion + '</div>';
+  if (o.descripcion_extras) {
+    o.descripcion_extras.forEach(function(ex) {
+      html += '<p class="obra-extra">' + ex + '</p>';
+    });
   }
 
   // Bloque 4 — Links
@@ -140,28 +254,7 @@ function obraHTML(o) {
 function expoItemHTML(e) {
   var html = '<div class="expo">';
 
-  // Bloque 1 — Encabezado
-  html += '<div class="expo-encabezado">';
-  html += '<div class="expo-titulo">' + e.titulo + '</div>';
-  html += '<div class="expo-complemento">' + e.complemento_titulo + '</div>';
-  if (e.lugar) {
-    html += '<div class="expo-lugar">' + e.lugar + '</div>';
-  }
-  html += '<div class="expo-año">' + e.año + '</div>';
-  html += '</div>';
-
-  // Bloque 2 — Descripción
-  var desc = e.descripcion;
-  if (desc.indexOf('\n\n') > -1) {
-    var parrafos = desc.split('\n\n');
-    parrafos.forEach(function(p) {
-      html += '<div class="expo-descripcion">' + p + '</div>';
-    });
-  } else {
-    html += '<div class="expo-descripcion">' + desc + '</div>';
-  }
-
-  // Bloque 3 — Multimedia
+  // Bloque 1 — Multimedia
   if (e.imgs && e.imgs.length) {
     html += '<div class="expo-multimedia">';
     if (e.imgs.length === 1) {
@@ -174,6 +267,27 @@ function expoItemHTML(e) {
       html += '</div>';
     }
     html += '</div>';
+  }
+
+  // Bloque 2 — Encabezado
+  html += '<div class="expo-encabezado">';
+  html += '<div class="expo-titulo">' + e.titulo + '</div>';
+  html += '<div class="expo-complemento">' + e.complemento_titulo + '</div>';
+  if (e.lugar) {
+    html += '<div class="expo-lugar">' + e.lugar + '</div>';
+  }
+  html += '<div class="expo-año">' + e.año + '</div>';
+  html += '</div>';
+
+  // Bloque 3 — Descripción
+  var desc = e.descripcion;
+  if (desc.indexOf('\n\n') > -1) {
+    var parrafos = desc.split('\n\n');
+    parrafos.forEach(function(p) {
+      html += '<div class="expo-descripcion">' + p + '</div>';
+    });
+  } else {
+    html += '<div class="expo-descripcion">' + desc + '</div>';
   }
 
   // Bloque 4 — Links

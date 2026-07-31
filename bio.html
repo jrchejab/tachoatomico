@@ -130,6 +130,10 @@ footer {
     </div>
   </section>
 
+  <div style="display:flex;justify-content:flex-end;margin-top:2rem;">
+    <a href="cv.html" target="_blank" class="inicio-link" style="text-transform:none;letter-spacing:0;">haz click para ver la <span style="text-transform:uppercase;letter-spacing:1px;">HOJA DE VIDA</span></a>
+  </div>
+
   <footer>
     @tachoatomico · 2025
   </footer>
@@ -147,7 +151,7 @@ CONTENIDO.bio.forEach(function(t) {
   p.textContent = t;
   bioEl.appendChild(p);
 });
-agregarPuntos('#nav-menu a');
+agregarPuntos('#nav-menu a', 16);
 </script>
 </body>
 </html>
