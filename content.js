@@ -10,7 +10,7 @@ var CONTENIDO = {
   ],
 
   // ---- perfil (index) ----
-  perfil: "Ingeniero Electrónico, con experiencia en la implementación, integración y programación de sistemas, especialmente en el desarrollo de hardware, software y comunicaciones. He desarrollado habilidades en la gestión de empresas y en el desarrollo de proyectos artísticos y culturales. Encuentro un gran valor en el desarrollo de ideas, la creatividad, la colaboración, el compromiso, la responsabilidad y el aprendizaje constante.",
+  perfil: "Ingeniero Electrónico, con experiencia en la implementación, integración y programación de sistemas, especialmente en el desarrollo de hardware, software y comunicaciones. He desarrollado habilidades en la gestión de empresas y en el desarrollo de proyectos artísticos y culturales. Encuentro un gran valor en la responsabilidad, constancia y compromiso aplicados al desarrollo de ideas, la creatividad, la colaboración, al aprendizaje y al compartir de conocimientos.",
 
   // ---- trayectoria (académico, arte, laboral) ----
   academico: [
