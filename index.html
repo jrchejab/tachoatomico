@@ -84,6 +84,27 @@ footer {
   font-size: 0.8rem;
   color: #bbb;
 }
+
+/* responsive */
+@media (max-width: 768px) {
+  .container { width: 92%; padding: 1.5rem 1rem; }
+  header img { height: 140px; }
+  header h1 { font-size: 2rem; }
+  header .tagline, header .meta-tags { font-size: 1.1rem; }
+  nav { gap: 1.5rem; padding: 1.5rem 0; }
+  nav a { font-size: 3rem; }
+  nav a .dot { width: 24px; height: 24px; }
+}
+
+@media (max-width: 480px) {
+  .container { width: 95%; padding: 1rem 0.75rem; }
+  header img { height: 100px; }
+  header h1 { font-size: 1.6rem; letter-spacing: 1px; }
+  header .tagline, header .meta-tags { font-size: 0.95rem; }
+  nav { flex-direction: column; align-items: center; gap: 1.25rem; }
+  nav a { font-size: 2.6rem; }
+  nav a .dot { width: 20px; height: 20px; }
+}
 </style>
 </head>
 <body>
