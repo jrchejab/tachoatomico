@@ -112,13 +112,59 @@ nav a .dot {
 
 .obra-multimedia { margin-top: 1rem; }
 .obra-multimedia img { width: 100%; border-radius: 6px; }
-.obra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.obra-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem; align-items: end; }
 .obra-grid img { width: 100%; border-radius: 6px; }
 
 .obra-links { margin-top: 0.75rem; }
 .obra-links a { color: #c00080; text-decoration: underline; font-size: 0.9rem; display: inline-block; margin-right: 1rem; }
 
+/* partes de una obra */
+.obra-partes { margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+.obra-parte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.obra-parte-texto {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+}
+.obra-parte-texto strong { font-weight: 400; color: #111; }
+.obra-parte-img { min-width: 0; }
+.obra-parte-img img { width: 100%; max-width: 100%; height: auto; border-radius: 6px; }
+
 footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; }
+
+/* grupos de obras */
+.grupo-arte { margin-bottom: 3rem; }
+.grupo-arte:last-child { margin-bottom: 0; }
+.grupo-titulo {
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #111;
+  line-height: 1;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+.grupo-obras { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.grupo-obras .obra { margin-bottom: 0; }
+.grupo-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+}
 </style>
 </head>
 <body>
@@ -144,10 +190,7 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; }
 <script src="components.js"></script>
 <script>
 renderInnerHeader('inner-header');
-var el = document.getElementById('arte-content');
-CONTENIDO.obras.forEach(function(o) {
-  el.innerHTML += obraHTML(o);
-});
+renderObrasAgrupadas('arte-content');
 agregarPuntos('#nav-menu a', 16);
 </script>
 </body>

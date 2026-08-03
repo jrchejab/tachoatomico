@@ -20,6 +20,30 @@ function agregarPuntos(selector, distMax) {
   });
 }
 
+// ---- Render obras agrupadas por complemento_titulo ----
+function renderObrasAgrupadas(containerId) {
+  var el = document.getElementById(containerId);
+  if (!el) return;
+  var grupos = {};
+  CONTENIDO.obras.forEach(function(o) {
+    var g = o.complemento_titulo || 'sin grupo';
+    if (!grupos[g]) grupos[g] = [];
+    grupos[g].push(o);
+  });
+  Object.keys(grupos).forEach(function(g) {
+    el.innerHTML += '<div class="grupo-arte">' +
+      '<div class="grupo-titulo">' + g + '</div>';
+    if (CONTENIDO.grupos_texto && CONTENIDO.grupos_texto[g]) {
+      el.innerHTML += '<div class="grupo-texto">' + CONTENIDO.grupos_texto[g] + '</div>';
+    }
+    el.innerHTML += '<div class="grupo-obras">';
+    grupos[g].forEach(function(o) {
+      el.innerHTML += obraHTML(o);
+    });
+    el.innerHTML += '</div></div>';
+  });
+}
+
 // ---- Header página principal (index / tachoatomico) ----
 function renderMainHeader(containerId) {
   var el = document.getElementById(containerId);
@@ -204,7 +228,17 @@ function expoFilaHTML(e) {
 function obraHTML(o) {
   var html = '<div class="obra">';
 
-  // Bloque 1 — Multimedia
+  // Bloque 1 — Encabezado
+  html += '<div class="obra-encabezado">';
+  html += '<div class="obra-titulo">' + o.titulo + '</div>';
+  html += '<div class="obra-complemento">' + o.complemento_titulo + '</div>';
+  if (o.exposicion) {
+    html += '<div class="obra-exposicion">Exposición: ' + o.exposicion + '</div>';
+  }
+  html += '<div class="obra-año">' + o.año + '</div>';
+  html += '</div>';
+
+  // Bloque 2 — Multimedia
   if (o.imgs && o.imgs.length) {
     html += '<div class="obra-multimedia">';
     if (o.imgs.length === 1) {
@@ -219,22 +253,24 @@ function obraHTML(o) {
     html += '</div>';
   }
 
-  // Bloque 2 — Encabezado
-  html += '<div class="obra-encabezado">';
-  html += '<div class="obra-titulo">' + o.titulo + '</div>';
-  html += '<div class="obra-complemento">' + o.complemento_titulo + '</div>';
-  if (o.exposicion) {
-    html += '<div class="obra-exposicion">Exposición: ' + o.exposicion + '</div>';
-  }
-  html += '<div class="obra-año">' + o.año + '</div>';
-  html += '</div>';
-
   // Bloque 3 — Descripción
   html += '<div class="obra-descripcion">' + o.descripcion + '</div>';
   if (o.descripcion_extras) {
     o.descripcion_extras.forEach(function(ex) {
       html += '<p class="obra-extra">' + ex + '</p>';
     });
+  }
+
+  // Bloque 3b — Partes (imagen derecha, texto izquierda)
+  if (o.partes && o.partes.length) {
+    html += '<div class="obra-partes">';
+    o.partes.forEach(function(p) {
+      html += '<div class="obra-parte">' +
+        '<div class="obra-parte-texto"><strong>' + p.titulo + ':</strong> ' + p.texto + '</div>' +
+        '<div class="obra-parte-img"><img src="imagenes/' + p.imagen + '" alt="' + p.titulo + '"></div>' +
+      '</div>';
+    });
+    html += '</div>';
   }
 
   // Bloque 4 — Links
@@ -254,7 +290,17 @@ function obraHTML(o) {
 function expoItemHTML(e) {
   var html = '<div class="expo">';
 
-  // Bloque 1 — Multimedia
+  // Bloque 1 — Encabezado
+  html += '<div class="expo-encabezado">';
+  html += '<div class="expo-titulo">' + e.titulo + '</div>';
+  html += '<div class="expo-complemento">' + e.complemento_titulo + '</div>';
+  if (e.lugar) {
+    html += '<div class="expo-lugar">' + e.lugar + '</div>';
+  }
+  html += '<div class="expo-año">' + e.año + '</div>';
+  html += '</div>';
+
+  // Bloque 2 — Multimedia
   if (e.imgs && e.imgs.length) {
     html += '<div class="expo-multimedia">';
     if (e.imgs.length === 1) {
@@ -268,16 +314,6 @@ function expoItemHTML(e) {
     }
     html += '</div>';
   }
-
-  // Bloque 2 — Encabezado
-  html += '<div class="expo-encabezado">';
-  html += '<div class="expo-titulo">' + e.titulo + '</div>';
-  html += '<div class="expo-complemento">' + e.complemento_titulo + '</div>';
-  if (e.lugar) {
-    html += '<div class="expo-lugar">' + e.lugar + '</div>';
-  }
-  html += '<div class="expo-año">' + e.año + '</div>';
-  html += '</div>';
 
   // Bloque 3 — Descripción
   var desc = e.descripcion;
