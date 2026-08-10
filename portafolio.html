@@ -279,8 +279,16 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
   .expo-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .expo-grid img { max-height: 9.5cm; object-fit: contain; }
 
+  /* Footer al final */
   .expo-descripcion { margin-top: 0.4rem; }
   .expo-encabezado { margin-bottom: 0.6rem; }
+
+  /* Mostrar la URL de los links al imprimir */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.6em;
+    color: #888;
+  }
 }
 </style>
 </head>
@@ -332,6 +340,8 @@ var expoEl = document.getElementById('expo-content');
 CONTENIDO.expo_list.forEach(function(e) {
   expoEl.innerHTML += expoItemHTML(e);
 });
+
+absolutizarLinks();
 </script>
 </body>
 </html>

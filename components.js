@@ -69,9 +69,12 @@ function renderInnerHeader(containerId) {
         '<img src="imagenes/logo_sign.png" alt="TACHOATOMICO">' +
         '<h1>@TACHOATOMICO</h1>' +
         '<nav id="nav-menu">' +
-          '<a href="bio.html">bio</a>' +
-          '<a href="arte.html">arte</a>' +
-          '<a href="expo.html">expo</a>' +
+          '<div class="nav-principal">' +
+            '<a href="bio.html">bio</a>' +
+            '<a href="arte.html">arte</a>' +
+            '<a href="expo.html">expo</a>' +
+          '</div>' +
+          '<a href="videos.html">videos</a>' +
         '</nav>' +
       '</div>' +
     '</div>';
@@ -237,6 +240,16 @@ function expoFilaHTML(e) {
   return html;
 }
 
+// ---- Absolutizar links relativos (funciona local y en servidor) ----
+function absolutizarLinks() {
+  document.querySelectorAll('a[href]').forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (href && !/^[a-z]+:/i.test(href) && href !== '#') {
+      a.setAttribute('href', new URL(href, window.location.href).href);
+    }
+  });
+}
+
 // ---- Slug para clases ----
 function slugify(s) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -286,7 +299,9 @@ function obraHTML(o) {
     html += '<div class="obra-partes">';
     o.partes.forEach(function(p) {
       html += '<div class="obra-parte obra-parte-' + slugify(p.titulo) + '">' +
-        '<div class="obra-parte-texto"><strong>' + p.titulo + ':</strong> ' + p.texto + '</div>' +
+        '<div class="obra-parte-texto"><strong>' + p.titulo + ':</strong> ' + p.texto +
+        (p.video ? '<div class="obra-parte-video"><a href="' + p.video + '" target="_blank">ver video</a></div>' : '') +
+        '</div>' +
         '<div class="obra-parte-img"><img src="imagenes/' + p.imagen + '" alt="' + p.titulo + '"></div>' +
       '</div>';
     });
@@ -298,6 +313,16 @@ function obraHTML(o) {
     html += '<div class="obra-links">';
     o.links.forEach(function(l) {
       html += '<a href="' + l.url + '" target="_blank">' + l.label + '</a>';
+    });
+    html += '</div>';
+  }
+
+  // Bloque 5 — Videos (solo si no hay videos por parte)
+  var tieneVideosPorParte = o.partes && o.partes.some(function(p) { return p.video; });
+  if (o.videos && o.videos.length && !tieneVideosPorParte) {
+    html += '<div class="obra-videos-links">';
+    o.videos.forEach(function(v, i) {
+      html += '<a href="' + v + '" target="_blank">ver video ' + (i + 1) + '</a>';
     });
     html += '</div>';
   }

@@ -58,10 +58,19 @@ body {
 }
 .logo-group nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0;
   margin-top: -5px;
+}
+.logo-group nav .nav-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo-group nav > a {
+  align-self: flex-start;
+  margin-top: 0;
 }
 
 /* nav general */
@@ -152,6 +161,7 @@ CONTENIDO.bio.forEach(function(t) {
   bioEl.appendChild(p);
 });
 agregarPuntos('#nav-menu a', 16);
+absolutizarLinks();
 </script>
 </body>
 </html>

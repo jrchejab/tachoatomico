@@ -56,7 +56,7 @@ var CONTENIDO = {
       año: "2026",
       descripcion: "Una palabra – Colombia – hecha símbolo para mostrar un país (mundo) que se distorsiona en los extremos ideológicos y políticos, lugares que promueven las redes y los medios de comunicación contrariando el diálogo, el respeto, el entendimiento y la compasión. Ideas y partidos que como polos magnéticos opuestos se atraen y confluyen en un punto donde parecen ser lo mismo.",
       imgs: ["opuestos_1_final-1024x1024.jpg", "opuestos_3-1024x1024.jpeg"],
-      videos: [],
+      videos: ["videos/opuestos 001.mp4"],
       links: [{ url: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODc5Mjg0Njk4NDc4NDk3?story_media_id=3833338620673619576_62323688973&igsh=Z2Z1aXI2b3NjdTB1", label: "Umbral Galeria" }]
     },
     {
@@ -66,7 +66,7 @@ var CONTENIDO = {
       año: "2026",
       descripcion: "Colombia (Antonio Caro, 1977) es el punto de partida de esta obra. Un país visto desde su bandera, símbolo que trasciende su significado libertario para invitarnos a reflexionar sobre el consumismo y colonialismo industrial en un país (mundo) donde se sigue intercambiando sangre por riqueza, riqueza por naturaleza. Una dinámica cromática donde el rojo y el amarillo desaparecen lentamente de la bandera llenando espacios que simbolizan esos intercambios, una especie de transferencia de energía balanceada que mantiene un desbalance social permanente.",
       imgs: ["contrarios_1_final-1024x1024.jpg", "contrarios_2_final-1024x1024.jpg"],
-      videos: [],
+      videos: ["videos/intercambios 001.mp4"],
       links: [{ url: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODc5Mjg0Njk4NDc4NDk3?story_media_id=3833338620673619576_62323688973&igsh=Z2Z1aXI2b3NjdTB1", label: "Umbral Galeria" }]
     },
     {
@@ -76,13 +76,13 @@ var CONTENIDO = {
       año: "2025",
       descripcion: "",
       partes: [
-        { titulo: "Karma", imagen: "kiep_01_karma-nobg.png", texto: "Esa causa y efecto de cada acción que se va entretejiendo en el tiempo y el espacio y que nos encuentra a cada momento cruzando situaciones grabadas en la memoria de nuestro histórico colectivo. Es ese comportamiento atómico de superposiciones y entrelazamientos donde un evento en una partícula inevitablemente influye en el estado de otra, sin importar el tiempo o la distancia." },
-        { titulo: "Impermanencia", imagen: "kiep_01_imp_nobg.png", texto: "Donde todo es transitorio, nada es estático. No se puede esperar una constante en un mundo en movimiento. Así como toda partícula subatómica, donde su estado y ubicación no son mas que probabilidades, así es la vida misma." },
-        { titulo: "Ego", imagen: "kiep_01_ego_nobg.png", texto: "Esa ilusión del yo, una imagen creada por nuestros recuerdos, vivencias y experiencias acumuladas que nos hacen creer que somos un ser único, sólido y permanente. Una imagen que pretende, sin lograrlo, separarnos del todo. Somos una estructura de partículas atómicas que se encuentran para crear ese ser que percibimos y el entorno en el que convivimos." },
-        { titulo: "Presente", imagen: "kiep_01_pre_nobg.png", texto: "Es el único momento donde se pude percibir la experiencia humana. La atención plena (mindfulness) implica observar las sensaciones, pensamientos y emociones sin apegarse a ellos, reconociendo su naturaleza transitoria. Dejar el pasado y no divagar en el futuro. La aceptación de nuestra realidad es estar presentes. El presente es esa partícula atómica, que solo permite determinar su estado mediante la observación, mirándose a sí misma." }
+        { titulo: "Karma", imagen: "kiep_01_karma-nobg.png", video: "videos/kiep 1.0 karma 002.mp4", texto: "Esa causa y efecto de cada acción que se va entretejiendo en el tiempo y el espacio y que nos encuentra a cada momento cruzando situaciones grabadas en la memoria de nuestro histórico colectivo. Es ese comportamiento atómico de superposiciones y entrelazamientos donde un evento en una partícula inevitablemente influye en el estado de otra, sin importar el tiempo o la distancia." },
+        { titulo: "Impermanencia", imagen: "kiep_01_imp_nobg.png", video: "videos/kiep 1.0 imp 001.mp4", texto: "Donde todo es transitorio, nada es estático. No se puede esperar una constante en un mundo en movimiento. Así como toda partícula subatómica, donde su estado y ubicación no son mas que probabilidades, así es la vida misma." },
+        { titulo: "Ego", imagen: "kiep_01_ego_nobg.png", video: "videos/kiep 1.0 ego 001.mp4", texto: "Esa ilusión del yo, una imagen creada por nuestros recuerdos, vivencias y experiencias acumuladas que nos hacen creer que somos un ser único, sólido y permanente. Una imagen que pretende, sin lograrlo, separarnos del todo. Somos una estructura de partículas atómicas que se encuentran para crear ese ser que percibimos y el entorno en el que convivimos." },
+        { titulo: "Presente", imagen: "kiep_01_pre_nobg.png", video: "videos/kiep 1.0 pres 001.mp4", texto: "Es el único momento donde se pude percibir la experiencia humana. La atención plena (mindfulness) implica observar las sensaciones, pensamientos y emociones sin apegarse a ellos, reconociendo su naturaleza transitoria. Dejar el pasado y no divagar en el futuro. La aceptación de nuestra realidad es estar presentes. El presente es esa partícula atómica, que solo permite determinar su estado mediante la observación, mirándose a sí misma." }
       ],
       imgs: ["KIEP-1024x1024.png"],
-      videos: [],
+      videos: ["videos/kiep 1.0 pres 001.mp4", "videos/kiep 1.0 karma 002.mp4", "videos/kiep 1.0 imp 001.mp4", "videos/kiep 1.0 ego 001.mp4"],
       links: []
     },
     {
@@ -92,13 +92,13 @@ var CONTENIDO = {
       año: "2025",
       descripcion: "",
       partes: [
-        { titulo: "Karma", imagen: "kiep_02_karma-nobg.png", texto: "Esa causa y efecto de cada acción que se va entretejiendo en el tiempo y el espacio y que nos encuentra a cada momento cruzando situaciones grabadas en la memoria de nuestro histórico colectivo. Es ese comportamiento atómico de superposiciones y entrelazamientos donde un evento en una partícula inevitablemente influye en el estado de otra, sin importar el tiempo o la distancia." },
-        { titulo: "Impermanencia", imagen: "kiep_02_imp_nobg.png", texto: "Donde todo es transitorio, nada es estático. No se puede esperar una constante en un mundo en movimiento. Así como toda partícula subatómica, donde su estado y ubicación no son mas que probabilidades, así es la vida misma." },
-        { titulo: "Ego", imagen: "kiep_02_ego_nobg.png", texto: "Esa ilusión del yo, una imagen creada por nuestros recuerdos, vivencias y experiencias acumuladas que nos hacen creer que somos un ser único, sólido y permanente. Una imagen que pretende, sin lograrlo, separarnos del todo. Somos una estructura de partículas atómicas que se encuentran para crear ese ser que percibimos y el entorno en el que convivimos." },
-        { titulo: "Presente", imagen: "kiep_02_pre_nobg.png", texto: "Es el único momento donde se pude percibir la experiencia humana. La atención plena (mindfulness) implica observar las sensaciones, pensamientos y emociones sin apegarse a ellos, reconociendo su naturaleza transitoria. Dejar el pasado y no divagar en el futuro. La aceptación de nuestra realidad es estar presentes. El presente es esa partícula atómica, que solo permite determinar su estado mediante la observación, mirándose a sí misma." }
+        { titulo: "Karma", imagen: "kiep_02_karma-nobg.png", video: "videos/kiep 1.0 karma 002.mp4", texto: "Esa causa y efecto de cada acción que se va entretejiendo en el tiempo y el espacio y que nos encuentra a cada momento cruzando situaciones grabadas en la memoria de nuestro histórico colectivo. Es ese comportamiento atómico de superposiciones y entrelazamientos donde un evento en una partícula inevitablemente influye en el estado de otra, sin importar el tiempo o la distancia." },
+        { titulo: "Impermanencia", imagen: "kiep_02_imp_nobg.png", video: "videos/kiep 1.0 imp 001.mp4", texto: "Donde todo es transitorio, nada es estático. No se puede esperar una constante en un mundo en movimiento. Así como toda partícula subatómica, donde su estado y ubicación no son mas que probabilidades, así es la vida misma." },
+        { titulo: "Ego", imagen: "kiep_02_ego_nobg.png", video: "videos/kiep 1.0 ego 001.mp4", texto: "Esa ilusión del yo, una imagen creada por nuestros recuerdos, vivencias y experiencias acumuladas que nos hacen creer que somos un ser único, sólido y permanente. Una imagen que pretende, sin lograrlo, separarnos del todo. Somos una estructura de partículas atómicas que se encuentran para crear ese ser que percibimos y el entorno en el que convivimos." },
+        { titulo: "Presente", imagen: "kiep_02_pre_nobg.png", video: "videos/kiep 1.0 pres 001.mp4", texto: "Es el único momento donde se pude percibir la experiencia humana. La atención plena (mindfulness) implica observar las sensaciones, pensamientos y emociones sin apegarse a ellos, reconociendo su naturaleza transitoria. Dejar el pasado y no divagar en el futuro. La aceptación de nuestra realidad es estar presentes. El presente es esa partícula atómica, que solo permite determinar su estado mediante la observación, mirándose a sí misma." }
       ],
       imgs: ["kiep 2.0.jpeg"],
-      videos: [],
+      videos: ["videos/kiep 1.0 pres 001.mp4", "videos/kiep 1.0 karma 002.mp4", "videos/kiep 1.0 imp 001.mp4", "videos/kiep 1.0 ego 001.mp4"],
       links: []
     },
     {
@@ -108,7 +108,7 @@ var CONTENIDO = {
       año: "2026",
       descripcion: "naturAI 4.0 imagina ese momento más allá de la eventual singularidad de la IA, donde además de reconocerse a sí misma, evoluciona para reconocer a otros seres alrededor suyo y preguntarse: ¿quién ha creado a este ser?, ¿lo he creado yo?, ¿lo han creado los humanos?, ¿fue creado por alguien o algo más?",
       imgs: ["naturAI_4.0_01-nobg.png", "naturAI 4.0 02.jpeg"],
-      videos: [],
+      videos: ["videos/naturAI 4.0 001.mp4"],
       links: []
     },
     {
@@ -118,7 +118,7 @@ var CONTENIDO = {
       año: "2025",
       descripcion: "naturAI 3.0 simboliza un intercambio de señales, datos e información que forman lo que vemos, lo que definimos, lo que creamos y lo que será creado por la futura AI.",
       imgs: ["NaturAI-1.0-foto_02.jpeg", "naturAI 3.0 close.jpeg"],
-      videos: [],
+      videos: ["videos/naturAI 3.0 001.mp4"],
       links: []
     },
     {
@@ -138,7 +138,7 @@ var CONTENIDO = {
       año: "2025",
       descripcion: "naturAI 2.0 es el híbrido entre lo que conocemos como naturaleza, sus réplicas humanas y las futuras representaciones de la misma creadas por la AI.",
       imgs: ["naturAI_2.0_01-nobg.png"],
-      videos: [],
+      videos: ["videos/naturAI 2.0 001.mp4"],
       links: []
     },
     {
@@ -148,7 +148,7 @@ var CONTENIDO = {
       año: "2025",
       descripcion: "naturAI 1.0 es la incertidumbre que nos espera al momento de ver algo considerado naturaleza y no tener certeza si su creación ha sido un proceso natural, obra del hombre o caprichos de la AI. Posiblemente sea una futura simbiosis donde todo a la final es lo mismo.",
       imgs: ["naturAI-1.0_2.png"],
-      videos: [],
+      videos: ["videos/naturAI 1.0 001.mp4"],
       links: []
     }
   ],
@@ -164,6 +164,7 @@ var CONTENIDO = {
       imgs: ["expo_colombia_01.JPG", "expo_colombia_02.JPG", "expo_colombia_03.jpg", "expo_colombia_04.jpeg"],
       videos: [],
       links: [
+        { url: "https://www.youtube.com/watch?v=fQ6yQc2IcP4", label: "Video de la Exposición" },
         { url: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODc5Mjg0Njk4NDc4NDk3?story_media_id=3833338620673619576_62323688973&igsh=Z2Z1aXI2b3NjdTB1", label: "Umbral Galería" },
         { url: "https://instagram.com/cristianpadillape", label: "@cristianpadillape" }
       ]
