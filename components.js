@@ -334,7 +334,7 @@ function obraHTML(o) {
 
 // ---- Expo item (página expo) ----
 function expoItemHTML(e) {
-  var html = '<div class="expo">';
+  var html = '<div class="expo expo-' + slugify(e.titulo) + '">';
 
   // Bloque 1 — Encabezado
   html += '<div class="expo-encabezado">';
