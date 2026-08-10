@@ -240,12 +240,13 @@ function expoFilaHTML(e) {
   return html;
 }
 
-// ---- Absolutizar links relativos (funciona local y en servidor) ----
+// ---- Absolutizar links relativos a tachoatomico.poordesigner.com ----
 function absolutizarLinks() {
+  var base = 'https://tachoatomico.poordesigner.com/';
   document.querySelectorAll('a[href]').forEach(function(a) {
     var href = a.getAttribute('href');
     if (href && !/^[a-z]+:/i.test(href) && href !== '#') {
-      a.setAttribute('href', new URL(href, window.location.href).href);
+      a.setAttribute('href', new URL(href, base).href);
     }
   });
 }

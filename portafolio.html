@@ -161,7 +161,6 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
 
 @media print {
   @page { size: letter; margin: 1.2cm; }
-  html { zoom: 0.8; }
 
   /* Página 1: encabezado + declaración */
   .inicio-pagina {
@@ -193,7 +192,7 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
 
   /* Página 4: KIEP 1.0 con su imagen principal */
   .obra-kiep-1-0 .obra-multimedia img {
-    max-height: 17cm;
+    max-height: 13cm;
     width: auto;
     max-width: 100%;
     margin: 0 auto;
@@ -233,7 +232,7 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
   }
   .obra-kiep-1-0 .obra-parte-img img,
   .obra-kiep-2-0 .obra-parte-img img {
-    height: 11cm;
+    height: 9cm;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -258,37 +257,30 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
   }
 
   /* Declaración: más aire en la página inicial */
-  .declaracion { font-size: 1.8rem; line-height: 1.8; }
+  .declaracion { font-size: 1.4rem; line-height: 1.8; }
 
-  /* Textos en impresión (20% menos que el doble) */
-  .obra-descripcion, .expo-descripcion { font-size: 1.6rem; }
-  .obra-parte-texto { font-size: 1.5rem; }
-  .obra-extra { font-size: 1.4rem; }
-  .grupo-texto { font-size: 1.5rem; }
-  .obra-titulo, .expo-titulo { font-size: 1.8rem; }
-  .obra-complemento, .expo-complemento, .obra-exposicion, .obra-año, .expo-lugar, .expo-año { font-size: 1.4rem; }
+  /* Textos en impresión */
+  .obra-descripcion, .expo-descripcion { font-size: 1.3rem; }
+  .obra-parte-texto { font-size: 1.2rem; }
+  .obra-extra { font-size: 1.1rem; }
+  .grupo-texto { font-size: 1.2rem; }
+  .obra-titulo, .expo-titulo { font-size: 1.4rem; }
+  .obra-complemento, .expo-complemento, .obra-exposicion, .obra-año, .expo-lugar, .expo-año { font-size: 1.1rem; }
 
   /* Textos superiores a todo el ancho en impresión */
   .grupo-texto, .obra-descripcion, .expo-descripcion { max-width: 100%; }
 
   /* Cada exposición debe caber en una página con balance */
-  .expo { max-height: 26.5cm; overflow: hidden; }
+  .expo { max-height: 21cm; overflow: hidden; }
 
-  .expo-multimedia { margin-top: 0.75rem; }
-  .expo-multimedia img { max-height: 17.5cm; width: auto; max-width: 100%; margin: 0 auto; }
-  .expo-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .expo-grid img { max-height: 9.5cm; object-fit: contain; }
+  .expo-multimedia { margin-top: 0.6rem; }
+  .expo-multimedia img { max-height: 14cm; width: auto; max-width: 100%; margin: 0 auto; }
+  .expo-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .expo-grid img { max-height: 7.5cm; object-fit: contain; }
 
   /* Footer al final */
   .expo-descripcion { margin-top: 0.4rem; }
   .expo-encabezado { margin-bottom: 0.6rem; }
-
-  /* Mostrar la URL de los links al imprimir */
-  a[href]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.6em;
-    color: #888;
-  }
 }
 </style>
 </head>
@@ -298,7 +290,7 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
 
   <div id="header-wrap" style="border-bottom:1px solid #d4d4d4;padding-bottom:0.5rem;margin-bottom:0;">
     <div id="main-header" style="border:none;padding-bottom:0.5rem;"></div>
-    <div style="display:flex;justify-content:flex-end;gap:2rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#aaa;letter-spacing:0.5px;padding-top:0.25rem;">
+    <div style="display:flex;justify-content:flex-end;gap:2rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#aaa;letter-spacing:0.5px;padding-top:0.25rem;align-items:center;">
       <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01z"/></svg>320 836 6443</span>
       <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:jrchejab@gmail.com" style="color:#aaa;text-decoration:none;">jrchejab@gmail.com</a></span>
     </div>
