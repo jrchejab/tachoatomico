@@ -92,7 +92,8 @@ a { color: #666; text-decoration: none; }
 a:hover { color: #111; }
 
 @media print {
-  @page { size: A4; margin: 1.5cm; }
+  @page { size: letter; margin: 1.2cm; }
+  html { zoom: 0.8; }
   .inicio-pagina {
     break-before: page;
     page-break-before: always;

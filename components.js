@@ -21,7 +21,8 @@ function agregarPuntos(selector, distMax) {
 }
 
 // ---- Render obras agrupadas por complemento_titulo ----
-function renderObrasAgrupadas(containerId) {
+function renderObrasAgrupadas(containerId, renderFn) {
+  renderFn = renderFn || obraHTML;
   var el = document.getElementById(containerId);
   if (!el) return;
   var grupos = {};
@@ -38,7 +39,7 @@ function renderObrasAgrupadas(containerId) {
     }
     el.innerHTML += '<div class="grupo-obras">';
     grupos[g].forEach(function(o) {
-      el.innerHTML += obraHTML(o);
+      el.innerHTML += renderFn(o);
     });
     el.innerHTML += '</div></div>';
   });
@@ -149,6 +150,18 @@ function obraFilaHTML(o) {
     });
     html += '</div>';
   }
+
+  // Partes (imagen derecha, texto izquierda)
+  if (o.partes && o.partes.length) {
+    html += '<div class="obra-partes">';
+    o.partes.forEach(function(p) {
+      html += '<div class="obra-parte">' +
+        '<div class="obra-parte-texto"><strong>' + p.titulo + ':</strong> ' + p.texto + '</div>' +
+        '<div class="obra-parte-img"><img src="imagenes/' + p.imagen + '" alt="' + p.titulo + '"></div>' +
+      '</div>';
+    });
+    html += '</div>';
+  }
   html += '</div>';
 
   // Imágenes extras (a 40% del tamaño principal) si hay más de 2
@@ -224,9 +237,14 @@ function expoFilaHTML(e) {
   return html;
 }
 
+// ---- Slug para clases ----
+function slugify(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 // ---- Obra de arte (página arte) ----
 function obraHTML(o) {
-  var html = '<div class="obra">';
+  var html = '<div class="obra obra-' + slugify(o.titulo) + '">';
 
   // Bloque 1 — Encabezado
   html += '<div class="obra-encabezado">';
@@ -254,7 +272,9 @@ function obraHTML(o) {
   }
 
   // Bloque 3 — Descripción
-  html += '<div class="obra-descripcion">' + o.descripcion + '</div>';
+  if (o.descripcion && o.descripcion.length) {
+    html += '<div class="obra-descripcion">' + o.descripcion + '</div>';
+  }
   if (o.descripcion_extras) {
     o.descripcion_extras.forEach(function(ex) {
       html += '<p class="obra-extra">' + ex + '</p>';
@@ -265,7 +285,7 @@ function obraHTML(o) {
   if (o.partes && o.partes.length) {
     html += '<div class="obra-partes">';
     o.partes.forEach(function(p) {
-      html += '<div class="obra-parte">' +
+      html += '<div class="obra-parte obra-parte-' + slugify(p.titulo) + '">' +
         '<div class="obra-parte-texto"><strong>' + p.titulo + ':</strong> ' + p.texto + '</div>' +
         '<div class="obra-parte-img"><img src="imagenes/' + p.imagen + '" alt="' + p.titulo + '"></div>' +
       '</div>';

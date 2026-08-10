@@ -45,23 +45,11 @@ header .tagline, header .meta-tags {
 header .tagline { font-size: 1.7rem; margin-top: 0; margin-bottom: 2px; line-height: 1.2; }
 header .meta-tags { font-size: 1.7rem; line-height: 1.2; }
 #header-wrap header { border-bottom: none !important; padding-bottom: 0.5rem !important; }
-header .contacto-sutil {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-top: 0.5rem;
-  letter-spacing: 0.5px;
-}
-header .contacto-sutil a {
-  color: #aaa;
-  text-decoration: none;
-}
-header .contacto-sutil a:hover { color: #666; }
 
 /* secciones en filas */
 .seccion-bloque {
-  padding: 2rem 0;
-  border-bottom: 1px solid #e8e8e8;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 .seccion-bloque:last-of-type { border-bottom: none; }
 
@@ -74,6 +62,8 @@ header .contacto-sutil a:hover { color: #666; }
   color: #111;
   line-height: 1;
   margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
 }
 
 /* declaración */
@@ -87,83 +77,91 @@ header .contacto-sutil a:hover { color: #666; }
   max-width: 100%;
 }
 
-/* contenido en filas: cada item = fila con 2 columnas */
-.fila-item {
-  display: grid;
-  grid-template-columns: minmax(0, 3.5fr) minmax(0, 6.5fr);
-  gap: 2rem;
-  align-items: start;
-  margin-bottom: 2.5rem;
-  max-width: 100%;
+/* grupos */
+.grupo-arte { margin-bottom: 3rem; }
+.grupo-arte:last-child { margin-bottom: 0; }
+.grupo-titulo {
+  font-family: 'Moonline Solid', 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #111;
+  line-height: 1;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
 }
-.fila-item > * { min-width: 0; }
-.fila-media { min-width: 0; overflow: hidden; }
-.fila-media img { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 4px; }
-.fila-texto-col {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.fila-texto {
-  min-width: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  overflow: hidden;
-  flex: 0 0 50%;
-}
-.fila-texto * { min-width: 0; max-width: 100%; }
-
-.fila-extras {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  min-width: 0;
-  flex: 0 0 calc(50% - 0.5rem);
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.fila-extras img {
-  flex: 0 0 auto;
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 4px;
+.grupo-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
 }
 
-/* arte y expo */
-.obra, .expo-blk { margin-bottom: 2rem; }
-.obra:last-child, .expo-blk:last-child { margin-bottom: 0; }
+/* contenido obras / expo */
+#arte-content, #expo-content { font-family: 'Roboto', sans-serif; }
 
-.obra-encabezado, .expo-encabezado { margin-bottom: 0.75rem; }
-.obra-titulo, .expo-titulo { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 400; color: #111; }
-.obra-complemento, .expo-complemento { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #c00080; font-weight: 400; margin-top: 0.1rem; }
-.obra-exposicion, .expo-lugar { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #111; font-weight: 400; margin-top: 0.1rem; }
-.obra-año, .expo-año { font-family: 'Roboto', sans-serif; font-size: 0.8rem; color: #111; font-weight: 400; margin-top: 0.1rem; }
+.grupo-obras { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.grupo-obras .obra { margin-bottom: 0; }
+
+.obra { margin-bottom: 3rem; }
+.obra:last-child { margin-bottom: 0; }
+.expo { margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid #e0e0e0; }
+.expo:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+.obra-encabezado, .expo-encabezado { margin-bottom: 1rem; }
+.obra-titulo, .expo-titulo { font-family: 'Roboto', sans-serif; font-size: 1.1rem; font-weight: 400; color: #111; }
+.obra-complemento, .expo-complemento { font-family: 'Roboto', sans-serif; font-size: 0.85rem; color: #c00080; font-weight: 400; margin-top: 0.15rem; }
+.obra-exposicion, .expo-lugar { font-family: 'Roboto', sans-serif; font-size: 0.85rem; color: #111; font-weight: 400; margin-top: 0.15rem; }
+.obra-año, .expo-año { font-family: 'Roboto', sans-serif; font-size: 0.85rem; color: #111; font-weight: 400; margin-top: 0.15rem; }
 
 .obra-descripcion, .expo-descripcion {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #555;
+  text-align: justify;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+.obra-extra { font-family: 'Roboto', sans-serif; font-size: 0.85rem; font-weight: 300; color: #555; text-align: justify; margin-top: 0.4rem; }
+
+.obra-multimedia, .expo-multimedia { margin-top: 1rem; max-width: 100%; overflow: hidden; }
+.obra-multimedia img, .expo-multimedia img { width: 100%; max-width: 100%; height: auto; border-radius: 6px; display: block; }
+.obra-grid, .expo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: end; }
+.obra-grid img, .expo-grid img { width: 100%; max-width: 100%; height: auto; border-radius: 6px; display: block; }
+
+.obra-links, .expo-links { margin-top: 0.75rem; }
+.obra-links a, .expo-links a { color: #c00080; text-decoration: underline; font-size: 0.9rem; display: inline-block; margin-right: 1rem; }
+
+/* partes de una obra */
+.obra-partes { margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+.obra-parte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.obra-parte-texto {
+  font-size: 0.95rem;
   font-weight: 300;
   color: #555;
   text-align: justify;
   line-height: 1.6;
 }
-.obra-extra { font-family: 'Roboto', sans-serif; font-size: 0.85rem; font-weight: 300; color: #555; text-align: justify; margin-top: 0.4rem; }
-
-.obra-multimedia, .expo-multimedia { margin-top: 0.75rem; max-width: 100%; overflow: hidden; }
-.obra-multimedia img, .expo-multimedia img { width: 100%; max-width: 100%; height: auto; border-radius: 4px; display: block; }
-.obra-grid, .expo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-.obra-grid img, .expo-grid img { width: 100%; max-width: 100%; height: auto; border-radius: 4px; display: block; }
-
-.obra-links, .expo-links { margin-top: 0.5rem; }
-.obra-links a, .expo-links a { color: #c00080; text-decoration: underline; font-size: 0.8rem; display: inline-block; margin-right: 0.75rem; }
+.obra-parte-texto strong { font-weight: 400; color: #111; }
+.obra-parte-img { min-width: 0; }
+.obra-parte-img img { width: 100%; max-width: 100%; height: auto; border-radius: 6px; }
 
 footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; margin-top: 2rem; }
 
 @media print {
-  @page { size: A4; margin: 1.5cm; }
+  @page { size: letter; margin: 1.2cm; }
+  html { zoom: 0.8; }
 
   /* Página 1: encabezado + declaración */
   .inicio-pagina {
@@ -171,41 +169,118 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
     page-break-before: always;
   }
 
-  /* Páginas dinámicas: los items fluyen */
-  .fila-item {
-    display: grid;
-    grid-template-columns: 35% 65%;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+  /* Título ARTE al doble de tamaño */
+  #titulo-arte { font-size: 5rem; }
+
+  /* Cada grupo de obras inicia en página nueva */
+  .grupo-arte {
+    break-before: page;
+    page-break-before: always;
+  }
+  .grupo-arte:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* Obras en una sola columna para impresión */
+  .grupo-obras { grid-template-columns: 1fr; gap: 0; }
+
+  /* Página 3: intercambios */
+  .obra-intercambios {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Página 4: KIEP 1.0 con su imagen principal */
+  .obra-kiep-1-0 .obra-multimedia img {
+    max-height: 17cm;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .obra-kiep-2-0 {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* KIEP 1.0 es largo (descripción + partes): permite que fluya */
+  div.obra-kiep-1-0,
+  div.obra-kiep-2-0 {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  /* Las partes de KIEP inician en página nueva (Karma = página 5 y 8) */
+  .obra-kiep-1-0 .obra-parte-karma,
+  .obra-kiep-2-0 .obra-parte-karma {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Cada parte de KIEP ocupa media página: Ego inicia página nueva */
+  .obra-kiep-1-0 .obra-parte-ego,
+  .obra-kiep-2-0 .obra-parte-ego {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Imágenes de las partes de KIEP uniformes y un poco más grandes */
+  .obra-kiep-1-0 .obra-parte-img,
+  .obra-kiep-2-0 .obra-parte-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .obra-kiep-1-0 .obra-parte-img img,
+  .obra-kiep-2-0 .obra-parte-img img {
+    height: 11cm;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  /* Cada parte de KIEP se mantiene entera */
+  .obra-parte {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-  .fila-media img {
-    width: 100%;
-    height: auto;
+
+  .obra, .expo {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
-  .fila-texto-col {
-    display: block;
-    height: auto !important;
+
+  /* Mantener título de grupo con su texto */
+  .grupo-titulo, .grupo-texto {
+    break-after: avoid;
+    page-break-after: avoid;
   }
-  .fila-texto {
-    overflow: visible;
-    max-height: none;
-  }
-  .fila-extras {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-    height: auto !important;
-  }
-  .fila-extras img {
-    flex: 1 1 auto;
-    width: auto;
-    max-height: 180px;
-    height: auto;
-    object-fit: contain;
-  }
+
+  /* Declaración: más aire en la página inicial */
+  .declaracion { font-size: 1.8rem; line-height: 1.8; }
+
+  /* Textos en impresión (20% menos que el doble) */
+  .obra-descripcion, .expo-descripcion { font-size: 1.6rem; }
+  .obra-parte-texto { font-size: 1.5rem; }
+  .obra-extra { font-size: 1.4rem; }
+  .grupo-texto { font-size: 1.5rem; }
+  .obra-titulo, .expo-titulo { font-size: 1.8rem; }
+  .obra-complemento, .expo-complemento, .obra-exposicion, .obra-año, .expo-lugar, .expo-año { font-size: 1.4rem; }
+
+  /* Textos superiores a todo el ancho en impresión */
+  .grupo-texto, .obra-descripcion, .expo-descripcion { max-width: 100%; }
+
+  /* Cada exposición debe caber en una página con balance */
+  .expo { max-height: 26.5cm; overflow: hidden; }
+
+  .expo-multimedia { margin-top: 0.75rem; }
+  .expo-multimedia img { max-height: 17.5cm; width: auto; max-width: 100%; margin: 0 auto; }
+  .expo-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .expo-grid img { max-height: 9.5cm; object-fit: contain; }
+
+  .expo-descripcion { margin-top: 0.4rem; }
+  .expo-encabezado { margin-bottom: 0.6rem; }
 }
 </style>
 </head>
@@ -216,8 +291,8 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
   <div id="header-wrap" style="border-bottom:1px solid #d4d4d4;padding-bottom:0.5rem;margin-bottom:0;">
     <div id="main-header" style="border:none;padding-bottom:0.5rem;"></div>
     <div style="display:flex;justify-content:flex-end;gap:2rem;font-family:'Inter',sans-serif;font-size:0.75rem;color:#aaa;letter-spacing:0.5px;padding-top:0.25rem;">
-      <span><svg width="10" height="10" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01z"/></svg>320 836 6443</span>
-      <span><svg width="10" height="10" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:jrchejab@gmail.com" style="color:#aaa;text-decoration:none;">jrchejab@gmail.com</a></span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01z"/></svg>320 836 6443</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="#aaa" style="margin-right:3px;vertical-align:middle;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:jrchejab@gmail.com" style="color:#aaa;text-decoration:none;">jrchejab@gmail.com</a></span>
     </div>
   </div>
 
@@ -229,17 +304,17 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
   </div>
 
   <div class="seccion-bloque inicio-pagina">
-    <div class="seccion-titulo">ARTE</div>
-    <div class="col2" id="arte-content"></div>
+    <div class="seccion-titulo" id="titulo-arte">ARTE</div>
+    <div id="arte-content"></div>
   </div>
 
-  <div class="seccion-bloque">
-    <div class="seccion-titulo">EXPOSICIONES</div>
-    <div class="col2" id="expo-content"></div>
+  <div class="seccion-bloque inicio-pagina">
+    <div class="seccion-titulo">EXHIBICIONES</div>
+    <div id="expo-content"></div>
   </div>
 
   <footer>
-    <a href="https://instagram.com/tachoatomico" target="_blank" style="color:#bbb;text-decoration:none;">@TACHOATOMICO</a> — 2025
+    <a href="https://instagram.com/tachoatomico" target="_blank" style="color:#bbb;text-decoration:none;">@TACHOATOMICO</a> — 2026
   </footer>
 
 </div>
@@ -249,36 +324,14 @@ footer { text-align: center; padding: 2rem 0; font-size: 0.8rem; color: #bbb; ma
 <script>
 renderMainHeader('main-header');
 
-// Arte
-var arteEl = document.getElementById('arte-content');
-CONTENIDO.obras.forEach(function(o) {
-  arteEl.innerHTML += obraFilaHTML(o);
-});
+// Arte (agrupado)
+renderObrasAgrupadas('arte-content');
 
 // Expo
 var expoEl = document.getElementById('expo-content');
 CONTENIDO.expo_list.forEach(function(e) {
-  expoEl.innerHTML += expoFilaHTML(e);
+  expoEl.innerHTML += expoItemHTML(e);
 });
-
-// Ajustar alto: la segunda columna no supera el alto de la imagen principal
-function ajustarAltos() {
-  document.querySelectorAll('.fila-item').forEach(function(item) {
-    var media = item.querySelector('.fila-media');
-    var textoCol = item.querySelector('.fila-texto-col');
-    if (!media || !textoCol) return;
-    var img = media.querySelector('img');
-    if (!img) return;
-    var alto = img.getBoundingClientRect().height;
-    textoCol.style.height = alto + 'px';
-    var extras = textoCol.querySelector('.fila-extras');
-    if (extras) {
-      extras.style.height = Math.floor(alto / 2) + 'px';
-    }
-  });
-}
-ajustarAltos();
-window.addEventListener('load', ajustarAltos);
 </script>
 </body>
 </html>
